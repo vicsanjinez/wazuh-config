@@ -1,13 +1,13 @@
 ##### Detectar Logs Personalizados
 
-[Documentacion Decoders](https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/decoders.html#regex-decoders)
+[Documentación Decoders](https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/decoders.html#regex-decoders)
 
-[Documentacion Reglas Personalizadas](https://documentation.wazuh.com/current/user-manual/ruleset/custom.html#ruleset-custom)
+[Documentación Reglas Personalizadas](https://documentation.wazuh.com/current/user-manual/ruleset/custom.html#ruleset-custom)
 
-La deteccion de Logs Personalizados en Wazuh funciona de la siguiente manera:
+La detección de Logs Personalizados en Wazuh funciona de la siguiente manera:
 El log que llega a Wazuh, primero es analizado por un Decoder, con el objetivo de extraer los valores que existen en el log.
 
-Luego el mismo log, es analizado por las Reglas (Rules), para poder establecer una identificacion, clasificacion, generar una alerta, etc.
+Luego el mismo log, es analizado por las Reglas (Rules), para poder establecer una identificación, clasificación, generar una alerta, etc.
 
 
 ###### Incluir un nuevo Decoder y Rule
@@ -107,7 +107,7 @@ mail: 'False'
 [Test Regex101](https://regex101.com/)
 [Test Regexr](https://regexr.com/)
 
-Como segundo ejemplo, se creara un Log Personalizado con la siguiente estructura:
+Como segundo ejemplo, se creará un Log Personalizado con la siguiente estructura:
 ```code
 SISTEMA,STATUS,IP,FECHA,HORA,REQUEST,STATUS WEB,DETALLE ERROR
 ```

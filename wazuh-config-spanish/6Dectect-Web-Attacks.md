@@ -1,20 +1,20 @@
 ##### Detectar Log4shell Attack
 
-[Documentacion Detectando Log4shell Attack](https://wazuh.com/blog/detecting-log4shell-with-wazuh/)
+[Documentación Detectando Log4shell Attack](https://wazuh.com/blog/detecting-log4shell-with-wazuh/)
 
-Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la deteccion del ataque Log4shell.
+Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la detección del ataque Log4shell.
 
 (Si desea puede instalar un Servidor Tomcat para realizar la prueba de deteccion. [Como instalar un Servidor Tomcat en Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-10-on-ubuntu-20-04))
 
 El ataque Log4shell viene por una vulnerabilidad en la libreria de logging de Java (CVE-2021-44228), para explotar la vulnerabilidad se debe crear un request (consulta web) especifico con los valores jndi, ldap, etc., de manera que es posible definir una Regla (Rule) que mediante expresiones regulares detecte estos valores en una request.
 
-Realizamos la configuracion de la Regla (Rule) en el archivo /var/ossec/etc/rules/local_rules.xml del Wazuh Manager:
-[Documentacion Personalizar Rules y Decoders](https://documentation.wazuh.com/current/user-manual/ruleset/custom.html)
+Realizamos la configuración de la Regla (Rule) en el archivo /var/ossec/etc/rules/local_rules.xml del Wazuh Manager:
+[Documentación Personalizar Rules y Decoders](https://documentation.wazuh.com/current/user-manual/ruleset/custom.html)
 
 El "id" de la Rule debe ser un valor entre 100000 y 120000 (de preferencia incremental a medida que se incluya Rules personalizadas) (ejemplo 110002)
 
 El "level" de la Rule corresponde a un valor entre 1 y 16 que defina la criticidad del evento (ejemplo 7)
-[Documentacion Alertas](https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/alerts.html#reference-ossec-alerts)
+[Documentación Alertas](https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/alerts.html#reference-ossec-alerts)
 
 ```code
 foo@bar:~$ sudo vim /var/ossec/etc/rules/local_rules.xml
@@ -50,7 +50,7 @@ Reiniciar el Wazuh Manager
 foo@bar:~$ systemctl restart wazuh-manager
 ```
 
-Solicitud Web Personalizada para probar la deteccion del ataque Log4shell (en un Navegador web)
+Solicitud Web Personalizada para probar la deteccion del ataque Log4shell (en un Navegador Web)
 ```code
 http://the_system_ip_address/?x=${jndi:ldap://${localhost}.{{test}}/a}
 ```
@@ -94,11 +94,11 @@ Los eventos detectados seran visibles en el Dashboard
 
 [Que es SQL Injection - Portswigger](https://portswigger.net/web-security/sql-injection)
 
-[Regla de Deteccion de Ataques Web](https://github.com/wazuh/wazuh-ruleset/blob/master/rules/0245-web_rules.xml)
+[Regla de Detección de Ataques Web](https://github.com/wazuh/wazuh-ruleset/blob/master/rules/0245-web_rules.xml)
 
-Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la deteccion del ataque SQL Injection.
+Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la detección del ataque SQL Injection.
 
-El ataque SQL Injection, permite obtener informacion de una base de datos a traves de consultas (query) personalizadas, de manera que es posible definir una Regla (Rule) que mediante expresiones regulares detecte caracteres, palabras, etc. en un request.
+El ataque SQL Injection, permite obtener información de una base de datos a traves de consultas (query) personalizadas, de manera que es posible definir una Regla (Rule) que mediante expresiones regulares detecte caracteres, palabras, etc. en un request.
 
 
 La deteccion de SQL Injection esta definida predeterminadamente en la siguiente Rule:
@@ -131,15 +131,15 @@ Los eventos detectados seran visibles en el Dashboard
 
 [Que es XSS Cross-site scripting - Portswigger](https://portswigger.net/web-security/cross-site-scripting)
 
-[Regla de Deteccion de Ataques Web](https://github.com/wazuh/wazuh-ruleset/blob/master/rules/0245-web_rules.xml)
+[Regla de Detección de Ataques Web](https://github.com/wazuh/wazuh-ruleset/blob/master/rules/0245-web_rules.xml)
 
 
-Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la deteccion del ataque XSS Cross-site scripting.
+Como ya se tiene captura de los logs del Servidor Apache, utilizaremos el mismo para probar la detección del ataque XSS Cross-site scripting.
 
 El ataque XSS Cross-site scripting, permite a un ciberdelincuente lograr que los usuarios realicen acciones sin que ellos se percaten a traves de request modificadas a las que los usuarios acceden a traves de links acortados, etc., de manera que es posible definir una Regla (Rule) que mediante expresiones regulares detecte caracteres, palabras, etc. en una request.
 
 
-La deteccion de XSS Cross-site scripting esta definida predeterminadamente en la siguiente Rule:
+La detección de XSS Cross-site scripting esta definida predeterminadamente en la siguiente Rule:
 
 ```xml
   <rule id="31105" level="6">

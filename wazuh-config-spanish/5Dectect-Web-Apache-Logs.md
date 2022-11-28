@@ -20,7 +20,7 @@ http://the_system_ip_address
 
 ###### En el Wazuh Manager:
 
-Una opcion de Wazuh Manager, es la posibilidad de enviar configuraciones a los Agentes de manera remota,
+Una opción de Wazuh Manager, es la posibilidad de enviar configuraciones a los Agentes de manera remota,
 Para lograr esto, se incluye el siguiente bloque de configuraciones en el archivo agent.conf
 
 

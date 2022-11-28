@@ -1,8 +1,8 @@
 ##### Monitoreo de la Integridad de Archivos en Windows
 
-[Documentacion File Integrity Monitoring](https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/fim-configuration.html)
+[Documentación File Integrity Monitoring](https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/fim-configuration.html)
 
-[Documentacion Windows Syscheck](https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html#reference-ossec-syscheck-windows-registry)
+[Documentación Windows Syscheck](https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html#reference-ossec-syscheck-windows-registry)
 
 ###### En el Agente en Windows:
 
@@ -13,7 +13,7 @@ C:\> notepad C:\Program Files (x86)\ossec-agent/ossec.conf
 ```
 
 * "frecuency" tiene que tener un valor entero que define cada cuentos segundos se realizar la verificacion de la integridad 
-* "directories check_all="yes" " define que se verificara la integridad de todos los archivos que existan en el directorio
+* "directories check_all="yes" " define que se verificará la integridad de todos los archivos que existan en el directorio
 * "recursion_level="3" " define que se verificara la integridad de los archivos y carpetas que se encuentren dentro de otras carpetas hasta 3 niveles adentro, 
 Ej. carpeta1->carpeta2->carpeta3->archivo3monitorizado.txt 
 Ej. carpeta1->carpeta2->carpeta3->archivo3monitorizado.txt->carpeta4->archivo4NOmonitorizado.txt

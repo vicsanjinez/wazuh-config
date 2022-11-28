@@ -4,9 +4,9 @@
 
 ##### Recomendaciones
 
-Para una instalación de Wazuh en un entorno de producción, se recomienda que el sistema operativo cuente con un espacio en Disco Duro de 1Tb o superior) (para una 15 servidores, con datos para 12 meses)
+Para una instalación de Wazuh en un entorno de producción, se recomienda que el sistema operativo cuente con un espacio en Disco Duro de 1Tb o superior) (para unos 15 servidores, con datos para 12 meses)
 
-Revisar el siguiente link para calcular el espacio que podria necesitar segun el numero de dispositivos, el tipo y el tiempo.
+Revisar el siguiente link para calcular el espacio que podria necesitar segun el número de dispositivos, el tipo y el tiempo.
 
 [Wazuh - Calculate the hot storage you need](https://wazuh.com/cloud/#pricing)
 
@@ -109,18 +109,18 @@ Reiniciar el servicio de DNS del servidor Ubuntu Server
 foo@bar:~$ sudo systemctl restart systemd-resolved.service
 ```
 
-##### Instalacion de Wazuh 4.3
+##### Instalación de Wazuh 4.3
 
-Wazuh tiene 3 componentes, Indexer, Server (tambien conocido como Manager) y Dashboard, los comandos corresponden a una instalacion de los 3 componentes en el mismo servidor (de ahi que la IP es 127.0.0.1)
+Wazuh tiene 3 componentes, Indexer, Server (tambien conocido como Manager) y Dashboard, los comandos corresponden a una instalación de los 3 componentes en el mismo servidor (de ahi que la IP es 127.0.0.1)
 
 ```code
 # requiere usuario root
 foo@bar:~$ sudo su
 ```
 
-##### Instalacion del componente Indexer
+##### Instalación del componente Indexer
 
-[Documentacion Indexer](https://documentation.wazuh.com/current/installation-guide/wazuh-indexer/installation-assistant.html)
+[Documentación Indexer](https://documentation.wazuh.com/current/installation-guide/wazuh-indexer/installation-assistant.html)
 
 Descargar el script de instalacion wazuh-install.sh
 ```code
@@ -128,10 +128,10 @@ foo@bar:~$ curl -sO https://packages.wazuh.com/4.3/wazuh-install.sh
 foo@bar:~$ curl -sO https://packages.wazuh.com/4.3/config.yml
 ```
 
-En el archivo descargado config.yml se define la configuracion de los 3 componentes,
+En el archivo descargado config.yml se define la configuración de los 3 componentes,
 Por ejemplo:
-* Solo existira un Indexer que tendra el nombre de "node-1" (es posible instalar el modulo Indexer como Cluster)
-* Solo existira un Server que tendra el nombre de "wazuh-1" (es posible instalar el modulo Server como Cluster)
+* Solo existirá un Indexer que tendra el nombre de "node-1" (es posible instalar el modulo Indexer como Cluster)
+* Solo existirá un Server que tendra el nombre de "wazuh-1" (es posible instalar el modulo Server como Cluster)
 * Solo existe una instancia del Dashboard que tendra el nombre de "dashboard"
 
 
@@ -192,25 +192,25 @@ Realizar un test para verificar que el servicio esta instalado y corriendo
 foo@bar:~$ telnet 127.0.0.1 9200
 ```
 
-##### Instalacion del componente Server
+##### Instalación del componente Server
 
-[Documentacion Server](https://documentation.wazuh.com/current/installation-guide/wazuh-server/installation-assistant.html)
+[Documentación Server](https://documentation.wazuh.com/current/installation-guide/wazuh-server/installation-assistant.html)
 
 
 ```code
 foo@bar:~$ bash wazuh-install.sh --wazuh-server wazuh-1
 ```
 
-##### Instalacion del componente Dashboard
+##### Instalación del componente Dashboard
 
-[Documentacion Dashboard](https://documentation.wazuh.com/current/installation-guide/wazuh-dashboard/installation-assistant.html)
+[Documentación Dashboard](https://documentation.wazuh.com/current/installation-guide/wazuh-dashboard/installation-assistant.html)
 
 
 ```code
 foo@bar:~$ bash wazuh-install.sh --wazuh-dashboard dashboard
 ```
 
-##### Instalacion finalizada.
+##### Instalación finalizada.
 
 ```code
 INFO: --- Summary ---

@@ -1,11 +1,11 @@
 ##### Conectar Wazuh Manager y el Agente con Password
 
-[Documentacion Connect Wazuh Manager and Agent with Password](https://documentation.wazuh.com/current/user-manual/agent-enrollment/security-options/using-password-authentication.html)
+[Documentación Connect Wazuh Manager and Agent with Password](https://documentation.wazuh.com/current/user-manual/agent-enrollment/security-options/using-password-authentication.html)
 
 
 ###### En Wazuh Manager:
 
-Habilita la autenticacion por password, incluyendo la configuracion "auth" en el archivo /var/ossec/etc/ossec.conf
+Habilita la autenticacion por password, incluyendo la configuración "auth" en el archivo /var/ossec/etc/ossec.conf
 
 ```code
 foo@bar:~$ sudo vim /var/ossec/etc/ossec.conf
@@ -17,7 +17,7 @@ foo@bar:~$ sudo vim /var/ossec/etc/ossec.conf
 </auth>
 ```
 
-Establece una password que sera usada en el proceso de registro de los agentes,
+Establece una password que será usada en el proceso de registro de los agentes,
 La password debe ser creada y almacenada en el nuevo archivo authd.pass el cual debe ser guardado en el path /var/ossec/etc/authd.pass
 
 Reemplace CUSTOM_PASSWORD con la password que usted eligio para el registro de los agentes y ejecute el siguiente comando:
